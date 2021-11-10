@@ -1,5 +1,6 @@
 import xarray as xr
 import geopandas as gpd
+import xesmf as xe
 
 
 def preparar_para_recorte(dataset: xr.Dataset, crs="epsg:4326", xdim="longitude", ydim="latitude") -> xr.Dataset:
@@ -52,3 +53,27 @@ def recortar(ds: xr.Dataset, shp: gpd.GeoDataFrame) -> xr.Dataset:
     ds_recortado = recorte(ds_para_recorte, shp)
     
     return ds_recortado
+
+def regridder(ds: xr.Dataset, lat: List, lon: List) -> xr.Dataset:
+    """ 
+    Retorna o dataset com a grade interpolada.
+    ------------
+    Argumentos:
+    
+    ds: xr.Dataset
+        Dataset a ser interpolado.
+    lat: List
+        Latitudes a serem utilizadas na interpolação
+    lon: List
+        Longitudes a serem utilizadas na interpolação
+    """
+    
+    ds_out = xr.Dataset(
+    {
+        "lat": (["lat"], lat),
+        "lon": (["lon"], lon),
+    })
+    
+    regridder = xe.Regridder(ds, ds_out, "bilinear")
+    
+    return regridder
