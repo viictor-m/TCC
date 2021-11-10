@@ -5,7 +5,8 @@ from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import cartopy
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
-import cmap_ons
+from skill import cmap_ons
+from skill import config
 import matplotlib.colors as mcolors
 from cartopy.io.shapereader import Reader
 from cartopy.feature import ShapelyFeature
@@ -37,12 +38,13 @@ def geoaxes_format(ax, longitude_interval=2.5):
     gl.xlabel_style = {'size': 11}
     gl.ylabel_style = {'size': 11}
 
-
+    dir_shp = config.dir_shp
+    
     estados_br = cfeature.NaturalEarthFeature(category='cultural', scale='50m', facecolor='none', name='admin_1_states_provinces_shp', alpha=.35)
     ax.add_feature(estados_br, edgecolor='gray')
     ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.35, edgecolor='gray')
 
-    bacias = ShapelyFeature(Reader('shp/bacias.shp').geometries(), ccrs.PlateCarree(),
+    bacias = ShapelyFeature(Reader(f'{dir_shp}/bacias.shp').geometries(), ccrs.PlateCarree(),
                             linewidth=1.25, facecolor='none',hatch='//', edgecolor='black', alpha=0.7)
     ax.add_feature(bacias)
     return gl
