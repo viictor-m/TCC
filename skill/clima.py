@@ -1,4 +1,5 @@
 import xarray as xr
+import dask
 
 def climatologia(ds: xr.Dataset, start: str, end: str) -> xr.Dataset:
     """
@@ -29,7 +30,7 @@ def anomalia(obj: xr.Dataset, clima: xr.Dataset) -> xr.Dataset:
         Dataset com a climatologia desejada.
     """
     
-    anomalia = obj.groupby('time.month') - clima.groupby('time.month')
+    anomalia = obj.groupby('time.month') - clima
     
     return anomalia
 
