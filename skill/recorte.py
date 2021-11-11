@@ -2,6 +2,7 @@ import xarray as xr
 import geopandas as gpd
 import xesmf as xe
 
+from typing import List
 
 def preparar_para_recorte(dataset: xr.Dataset, crs="epsg:4326", xdim="longitude", ydim="latitude") -> xr.Dataset:
     """
@@ -75,5 +76,6 @@ def regridder(ds: xr.Dataset, lat: List, lon: List) -> xr.Dataset:
     })
     
     regridder = xe.Regridder(ds, ds_out, "bilinear")
+    dr_out = regridder(ds)
     
-    return regridder
+    return dr_out
