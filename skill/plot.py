@@ -40,12 +40,12 @@ def geoaxes_format(ax, longitude_interval=2.5):
 
     dir_shp = config.dir_shp
     
-    estados_br = cfeature.NaturalEarthFeature(category='cultural', scale='50m', facecolor='none', name='admin_1_states_provinces_shp', alpha=.35)
-    ax.add_feature(estados_br, edgecolor='gray')
-    ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.35, edgecolor='gray')
+    estados_br = cfeature.NaturalEarthFeature(category='cultural', scale='50m', facecolor='none', name='admin_1_states_provinces_shp', alpha=.7)
+    ax.add_feature(estados_br, edgecolor='black', linewidth=1)
+    ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.35, edgecolor='black')
 
     bacias = ShapelyFeature(Reader(f'{dir_shp}/bacias.shp').geometries(), ccrs.PlateCarree(),
-                            linewidth=1.25, facecolor='none',hatch='//', edgecolor='black', alpha=0.7)
+                            linewidth=1.25, facecolor='none', hatch='..', edgecolor='gray', alpha=.7)
     ax.add_feature(bacias)
     return gl
 
@@ -63,9 +63,9 @@ def addcbar(plot, ax, cblabel="", orientation="horizontal", rotation=0, ticks=No
     cbar.set_label(cblabel, fontsize = 11)
     
 
-def plot(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200], cmap=cmap_ons.ons_cmap):
+def plot_contour(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200], cmap=cmap_ons.ons_cmap):
     """
-    Gera o plot dos dados de precipitação.
+    Gera o plot de contorno dos dados de precipitação.
     ------------
     Argumentos
 
@@ -93,4 +93,34 @@ def plot(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150,
     gl = geoaxes_format(ax)
 
     cbar = addcbar(cont, ax, cblabel='mm', orientation='vertical', ticks=levels)
+    return ax
+
+
+def plot_mesh(ax, dataset, cmap='RdBu'):
+    """
+    Gera o plot por ponto de grade dos dados de precipitação.
+    ------------
+    Argumentos
+
+    ax: matplotlib.axes 
+        eixo a ser plotado
+
+    dataset: xarray.DataArray
+        dado a ser plotado
+    ------------
+    Retorna
+
+    ax: matplotlib.axes
+        eixo com o plot
+    """
+
+
+    cont = ax.pcolormesh(dataset.lon, dataset.lat, dataset,
+                    cmap=cmap,
+                    shading='auto',
+                    transform=ccrs.PlateCarree())
+
+    gl = geoaxes_format(ax)
+
+    cbar = addcbar(cont, ax, cblabel='adimensional', orientation='vertical')
     return ax
