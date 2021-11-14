@@ -17,52 +17,52 @@ Análise do skill do modelo CAM 3.1 para as rodadas operacionais de 2012 a 2020.
 
 ### Como executar
 
-1. Clone este repositório.
+1\. Clone este repositório.
 
 ```bash
 git clone git@github.com:viictor-m/TCC.git
 ```
 
-2. Acesse o diretório do projeto.
+2\. Acesse o diretório do projeto.
 ```
 cd TCC
 ```
 
-3. Instale as dependências.
+3\. Instale as dependências.
 
 ```bash
 conda env create -f requirements.yaml
 ```
 
-4. Baixar arquivos utilizados para análise desse repositório.
+4\. Baixar arquivos utilizados para análise desse repositório.
 
-4.1 Crie uma pasta dados
+   4.1\. Crie uma pasta dados
 ```bash
 mkdir dados
 ```
-4.2 Instalar extensão para utilizar o drive
-```
+
+   4.2\. Instalar extensão para utilizar o drive
+```bash
 ./download-dados.sh instalar
 ```
-4.3 Autenticar entrada no seu drive
-```
+   4.3\. Autenticar entrada no seu drive
+```bash
 ./download-dados.sh autenticar
 ```
-4.4 Fazer download dos arquivos.
-```
+   4.4\. Fazer download dos arquivos.
+```bash
 ./download-dados.sh download
 ```
 
-#### Ordem dos notebooks
-
-##### Gera imagens das climatologias do GPCC
+## :card_index_dividers: Ordem dos notebooks
+### 1. Gera imagens das climatologias do GPCC
 climatologia.ipynb
 
-##### Gera o skill do CAM a partir da anomalia
+#### 2. Gera o skill do CAM a partir da anomalia
 skill-cam_anom.ipynb
 
-##### Gera o skill do CAM a partir das previsões brutas
+#### 3. Gera o skill do CAM a partir das previsões brutas
 skill-cam_prev.ipynb
 
-##### Gera imagens do skill do CAM
+#### 4. Gera imagens do skill do CAM
 skill-plot.ipynb
