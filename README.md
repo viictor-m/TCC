@@ -31,7 +31,7 @@ cd TCC
 3. Instale as dependências.
 
 ```bash
-conda env create -f environment.yaml
+conda env create -f requirements.yaml
 ```
 
 4. Baixar arquivos utilizados para análise desse repositório.
