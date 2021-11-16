@@ -118,6 +118,8 @@ def plot_mesh(ax, dataset, cmap='RdBu'):
     cont = ax.pcolormesh(dataset.lon, dataset.lat, dataset,
                     cmap=cmap,
                     shading='auto',
+                    vmin=-1,
+                    vmax=1,
                     transform=ccrs.PlateCarree())
 
     gl = geoaxes_format(ax)
