@@ -58,11 +58,11 @@ mkdir dados
 ### 1. Gera imagens das climatologias do GPCC
 climatologia.ipynb
 
-#### 2. Gera o skill do CAM a partir da anomalia
+### 2. Gera o skill do CAM a partir da anomalia
 skill-cam_anom.ipynb
 
-#### 3. Gera o skill do CAM a partir das previsões brutas
+### 3. Gera o skill do CAM a partir das previsões brutas
 skill-cam_prev.ipynb
 
-#### 4. Gera imagens do skill do CAM
+### 4. Gera imagens do skill do CAM
 skill-plot.ipynb
