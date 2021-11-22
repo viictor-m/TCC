@@ -76,3 +76,7 @@ skill-plot.ipynb
 ### 4. Baixa e gera imagens do skill dos outros centros (CFSv2, CMC1, GFDL e NASA)
 
 skill-outros_centros-plot.ipynb
+
+### 5. Faz ajuste de escala da previsão e ponderação pelo skill do CAM
+
+cam3-ajuste_vies.ipynb
