@@ -32,7 +32,7 @@ def download(centro: str, mes: int) -> xr.Dataset:
     
     cdo = Cdo()
     nc = cdo.import_binary(input=f'{name}.ctl', output=f'{name}.nc', options='-f nc4')
-    shutil.move(nc, f'{dir_dados}')
+    shutil.move(nc, dir_dados.joinpath('outros_centros').mkdir(exist_ok=True))
         
     for sufix in sufixes:
         complete_name = f'{name}{sufix}'
