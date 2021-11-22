@@ -96,7 +96,7 @@ def plot_contour(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 1
     return ax
 
 
-def plot_mesh(ax, dataset, cmap='RdBu'):
+def plot_mesh(ax, dataset, cmap='RdBu', vmin=None, vmax=None):
     """
     Gera o plot por ponto de grade dos dados de precipitação.
     ------------
@@ -118,8 +118,8 @@ def plot_mesh(ax, dataset, cmap='RdBu'):
     cont = ax.pcolormesh(dataset.lon, dataset.lat, dataset,
                     cmap=cmap,
                     shading='auto',
-                    vmin=-1,
-                    vmax=1,
+                    vmin=vmin,
+                    vmax=vmax,
                     transform=ccrs.PlateCarree())
 
     gl = geoaxes_format(ax)
