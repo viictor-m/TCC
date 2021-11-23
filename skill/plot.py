@@ -41,11 +41,11 @@ def geoaxes_format(ax, longitude_interval=2.5):
     dir_shp = config.dir_shp
     
     estados_br = cfeature.NaturalEarthFeature(category='cultural', scale='50m', facecolor='none', name='admin_1_states_provinces_shp', alpha=.7)
-    ax.add_feature(estados_br, edgecolor='black', linewidth=1)
-    ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.35, edgecolor='black')
+    ax.add_feature(estados_br, edgecolor='gray', linewidth=1)
+    ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=.35, edgecolor='gray')
 
     bacias = ShapelyFeature(Reader(f'{dir_shp}/bacias.shp').geometries(), ccrs.PlateCarree(),
-                            linewidth=1.25, facecolor='none', hatch='..', edgecolor='gray', alpha=.7)
+                            linewidth=1.25, facecolor='none', hatch='//', edgecolor='black', alpha=.7)
     ax.add_feature(bacias)
     return gl
 
