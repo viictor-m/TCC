@@ -63,7 +63,7 @@ def addcbar(plot, ax, cblabel="", orientation="horizontal", rotation=0, ticks=No
     cbar.set_label(cblabel, fontsize = 11)
     
 
-def plot_contour(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200], cmap=cmap_ons.ons_cmap):
+def plot_contour(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200], cmap=cmap_ons.ons_cmap, cblabel='', cbar_orientation='vertical'):
     """
     Gera o plot de contorno dos dados de precipitação.
     ------------
@@ -92,11 +92,11 @@ def plot_contour(ax, dataset, levels=[0, 1, 5, 10, 15, 20, 25, 30, 40, 50, 75, 1
 
     gl = geoaxes_format(ax)
 
-    cbar = addcbar(cont, ax, cblabel='mm', orientation='vertical', ticks=levels)
+    cbar = addcbar(cont, ax, cblabel=cblabel, orientation=cbar_orientation, ticks=levels)
     return ax
 
 
-def plot_mesh(ax, dataset, cmap='RdBu', vmin=None, vmax=None):
+def plot_mesh(ax, dataset, cmap='RdBu', vmin=None, vmax=None, cblabel='', cbar_orientation='vertical', cbar_ticks=None):
     """
     Gera o plot por ponto de grade dos dados de precipitação.
     ------------
@@ -124,5 +124,5 @@ def plot_mesh(ax, dataset, cmap='RdBu', vmin=None, vmax=None):
 
     gl = geoaxes_format(ax)
 
-    cbar = addcbar(cont, ax, cblabel='adimensional', orientation='vertical')
+    cbar = addcbar(cont, ax, cblabel=cblabel, orientation=cbar_orientation, ticks=cbar_ticks)
     return ax
