@@ -80,3 +80,11 @@ skill-outros_centros-plot.ipynb
 ### 5. Faz ajuste de escala da previsão e ponderação pelo skill do CAM
 
 cam3-ajuste_vies.ipynb
+
+### 6. Calcula o RMSE da previsão bruta e com ajuste
+
+cam3-rmse.ipynb
+
+### 7. Plota o RMSE e a variação entre previsão bruta e ajustada
+
+cam3-rmse_plot.ipynb
