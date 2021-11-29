@@ -73,7 +73,7 @@ skill-cam_anom.ipynb
 
 skill-plot.ipynb
 
-### 4. Baixa e gera imagens do skill dos outros centros (CFSv2, CMC1, GFDL e NASA)
+### 4. Baixa e gera imagens do skill dos outros centros componentes do NMME
 
 skill-outros_centros-plot.ipynb
 
@@ -81,7 +81,7 @@ skill-outros_centros-plot.ipynb
 
 cam3-ajuste_vies.ipynb
 
-### 6. Calcula o RMSE da previsão bruta e com ajuste
+### 6. Calcula o RMSE da previsão bruta e com ajustes
 
 cam3-rmse.ipynb
 
