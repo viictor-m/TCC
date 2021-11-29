@@ -30,12 +30,14 @@ def download(centro: str, mes: int) -> xr.Dataset:
             file.write(request.content)
         file.close()
     
+    dir_dados.joinpath('outros_centros').mkdir(exist_ok=True)
+    
     cdo = Cdo()
     nc = cdo.import_binary(input=f'{name}.ctl', output=f'{name}.nc', options='-f nc4')
-    shutil.move(nc, dir_dados.joinpath('outros_centros').mkdir(exist_ok=True))
+    shutil.move(nc, dir_dados.joinpath('outros_centros'))
         
     for sufix in sufixes:
         complete_name = f'{name}{sufix}'
         os.unlink(complete_name)
     
-    return xr.open_dataset(f'{dir_dados}/{name}.nc')
+    return xr.open_dataset(dir_dados.joinpath('outros_centros', f'{name}.nc'))
