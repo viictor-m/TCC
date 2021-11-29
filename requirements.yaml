@@ -13,6 +13,7 @@ dependencies:
   - backports.functools_lru_cache=1.6.4=pyhd8ed1ab_0
   - bokeh=2.4.1=py39hf3d152e_1
   - boost-cpp=1.74.0=h312852a_4
+  - bottleneck=1.3.2=py39hce5d2b2_5
   - branca=0.4.2=pyhd8ed1ab_0
   - brotlipy=0.7.0=py39h3811e60_1001
   - bzip2=1.0.8=h7f98852_4
@@ -188,6 +189,7 @@ dependencies:
   - postgresql=13.3=h2510834_1
   - proj=8.1.1=h277dcde_2
   - prompt-toolkit=3.0.21=pyha770c72_0
+  - properscoring=0.1=py_0
   - psutil=5.8.0=py39h3811e60_2
   - pthread-stubs=0.4=h36c2ea0_1001
   - ptyprocess=0.7.0=pyhd3deb0d_0
@@ -243,6 +245,7 @@ dependencies:
   - xarray=0.19.0=pyhd8ed1ab_1
   - xerces-c=3.2.3=h9d8b166_3
   - xesmf=0.6.1=pyhd8ed1ab_0
+  - xhistogram=0.3.0=pyhd8ed1ab_0
   - xorg-fixesproto=5.0=h7f98852_1002
   - xorg-inputproto=2.3.2=h7f98852_1002
   - xorg-kbproto=1.0.7=h7f98852_1002
@@ -258,6 +261,7 @@ dependencies:
   - xorg-renderproto=0.11.1=h7f98852_1002
   - xorg-xextproto=7.3.0=h7f98852_1002
   - xorg-xproto=7.0.31=h7f98852_1007
+  - xskillscore=0.0.24=pyhd8ed1ab_0
   - xyzservices=2021.10.0=pyhd8ed1ab_0
   - xz=5.2.5=h516909a_1
   - yaml=0.2.5=h516909a_0
@@ -267,4 +271,7 @@ dependencies:
   - zstd=1.5.0=ha95c52a_0
   - pip:
     - cdo==1.5.5
+    - mypy==0.910
+    - mypy-extensions==0.4.3
+    - toml==0.10.2
 prefix: /home/mvictor/miniconda3/envs/tcc
