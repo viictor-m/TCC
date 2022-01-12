@@ -177,6 +177,7 @@ dependencies:
   - parso=0.8.2=pyhd8ed1ab_0
   - partd=1.2.0=pyhd8ed1ab_0
   - pathlib=1.0.1=py39hf3d152e_5
+  - patsy=0.5.2=pyhd8ed1ab_0
   - pcre=8.45=h9c3ff4c_0
   - pendulum=2.1.2=pyhd8ed1ab_1
   - pexpect=4.8.0=pyh9f0ad1d_2
@@ -220,6 +221,8 @@ dependencies:
   - rtree=0.9.7=py39hb102c33_2
   - scikit-learn=1.0=py39h7c5d8c9_1
   - scipy=1.7.1=py39hee8e79c_0
+  - seaborn=0.11.2=hd8ed1ab_0
+  - seaborn-base=0.11.2=pyhd8ed1ab_0
   - setuptools=58.2.0=py39hf3d152e_0
   - shapely=1.7.1=py39ha61afbd_5
   - simplejson=3.17.5=py39h3811e60_1
@@ -228,6 +231,7 @@ dependencies:
   - sortedcontainers=2.4.0=pyhd8ed1ab_0
   - sparse=0.13.0=pyhd8ed1ab_0
   - sqlite=3.36.0=h9cd32fc_2
+  - statsmodels=0.13.1=py39hce5d2b2_0
   - tblib=1.7.0=pyhd8ed1ab_0
   - threadpoolctl=3.0.0=pyh8a188c0_0
   - tiledb=2.3.4=he87e0bf_0
