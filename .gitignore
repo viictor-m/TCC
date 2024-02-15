@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+dados/
+img/
+*/__pycache__/
+gdrive
